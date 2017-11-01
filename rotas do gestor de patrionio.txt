@@ -1,0 +1,55 @@
+Gestor de Patrimônio ( rotas )
+-------------------------------------------------------------------------------------
+
+ROTAS::
+
+home/index
+home/login
+home/logout
+
+usuario/index
+usuario/excluir
+usuario/alterarConta
+
+documento/cadastrar
+documento/editar
+documento/excluir
+documento/consultar
+
+patrimonio/balancearPatromonio
+
+    ativo/cadastrar
+    ativo/editar
+    ativo/excluir
+    ativo/consultar
+
+    passivo/cadastrar
+    passivo/editar
+    passivo/excluir
+    passivo/consultar
+
+fluxodecaixa/demonstrarResultado
+fluxodecaixa/consultarexercicio
+fluxodecaixa/cadastrar
+fluxodecaixa/editar
+fluxodecaixa/excluir
+
+    receita/cadastrar
+    receita/editar
+    receita/excluir
+    receita/consultar
+
+    despesa/cadastrar
+    despesa/editar
+    despesa/excluir
+    despesa/consultar
+
+metafinanceira/cadastrar
+metafinanceira/editar
+metafinanceira/excluir
+metafinanceira/consultar
+
+    medida/cadastrar
+    medida/editar
+    medida/excluir
+    medida/consultar

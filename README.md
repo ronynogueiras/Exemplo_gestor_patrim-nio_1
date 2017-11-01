@@ -1,2 +1,4 @@
-# Exemplo_gestor_patrim-nio_1
-Exemplo de uitlização do framerork Geare
+# UFG-CONSTRUCAO-D-SOFTWARE-2017-01
+Software desenvolvido no transcorrer da disciplina de Construção de Software
+
+Documento de visão submetido em 03/04/2017
