@@ -1,44 +1,44 @@
 <?php
 
-class Controller 
+class Controller
 {
 	private $name;
 	private $jsCode;
 	private $App;
-	
+
 	private function __construct( $controllerName, &$parentApp )
 	{
 		global $autoload;
 		global $config;
-		
+
 		$this->name = $controllerName;
 		$this->App = &$parentApp;
-		
+
 		// load default services
 		for ( $i = 0; $i < sizeOf( $autoload['services'] ); $i++) {
 			$this->loadService( $autoload['services'][$i] );
 		}
-		
+
 		// load default models
 		for ( $i = 0; $i < sizeOf( $autoload['models'] ); $i++) {
 			$this->loadModel( $autoload['models'][$i], $this->App );
 		}
 
-		if ( $config['template'] != false ) {	
+		if ( $config['template'] != false ) {
 			define( 'TEMPLATE', TEMPLATES . $config['template'] . '/templates/' );
 		}
-		
+
 		$this->afterConstruct();
 	}
-	
+
 	public function __destruct()
 	{
 		global $config;
-	
+
 		$this->afterDestruct();
 	}
 
-	public static function create( $controllerName, $parentApp ) 
+	public static function create( $controllerName, $parentApp )
 	{
 		return new static( $controllerName, $parentApp );
 	}
@@ -63,13 +63,13 @@ class Controller
 			}
 		}
 	}
-	
+
 	public function greet()
 	{
 		echo "Controller <b>" . $this->name . "</b> invocado <br/>";
 	}
-	
-	public function loadView( $viewName, $data = null ) 
+
+	public function loadView( $viewName, $data = null )
 	{
 		$viewClassName = ucfirst( $viewName );
 		$fileForInclusion =  VIEWS . $this->name . '/' . $viewName . '.php' ;
@@ -83,11 +83,11 @@ class Controller
 		}
 
 	}
-	
+
 	private function loadModel( $modelName )
 	{
 		$modelClassName = ucfirst( $modelName );
-	
+
 		$fileForInclusion = MODELS . '' . $modelName . '.php' ;
 		if ( file_exists( $fileForInclusion ) ) {
 			include_once( $fileForInclusion );
@@ -98,9 +98,9 @@ class Controller
 		}
 	}
 
-	public function loadFacade( $facadeName, array $dependeces = null ) 
+	public function loadFacade( $facadeName, array $dependeces = null )
 	{
-		$facadeClassName = ucfirst( $facadeName );
+		$facadeClassName = ucfirst( $facadeName ).'Facade';
 		$fileForInclusion = ENTITIES . '/' . $facadeName . 'Facade.php';
 
 		if ( file_exists( $fileForInclusion ) ) {
@@ -112,12 +112,12 @@ class Controller
 			$this->App->exceptionsService->raise( 'facadeNotFound' );
 		}
 	}
-	
+
 	public function loadService( $serviceName )
 	{
 		$serviceClassName = ucfirst( $serviceName );
 		$fileForInclusion = SERVICES . '' . $serviceName . '.php';
-		
+
 		if ( file_exists( $fileForInclusion ) ) {
 			include_once( $fileForInclusion );
 			$this->{$serviceName.'Service'} = $serviceClassName::create( $serviceName, $this->App );
@@ -125,14 +125,14 @@ class Controller
 		else {
 			$this->App->exceptionsService->raise( 'serviceNotFound' );
 		}
-		
+
 	}
-	
-	public function stackJavaScript( $javaScriptCode ) 
+
+	public function stackJavaScript( $javaScriptCode )
 	{
 		$this->jsCode = $this->jsCode.$javaScriptCode;
 	}
-	
+
 	public function dumpJavaScript()
 	{
 		echo $this->jsCode;
@@ -140,12 +140,12 @@ class Controller
 
 	protected function afterConstruct(  )
 	{
-		
+
 	}
-	
+
 	protected function afterDestruct()
 	{
-		
+
 	}
 
 	protected function getAppName()
@@ -161,5 +161,5 @@ class Controller
 		else {
 			header( "Location:" . DOMAIN );
 		}
-	}	
+	}
 }
