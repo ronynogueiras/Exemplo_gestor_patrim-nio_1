@@ -22,7 +22,7 @@
 								<li><a href="<?=DOMAIN?>usuario/editaConta/">Editar Conta</a> </li>
 								<li><a href="<?=DOMAIN?>usuario/excluirConta/">Excluir Conta</a></li>
 							</ul>
-						</li>              
+						</li>
 						<li class="menu-list"><a href=""><i class="glyphicon glyphicon-eye-open"></i> <span>Patrimônio</span></a>
 							<ul class="sub-menu-list">
 								<li><a href="<?=DOMAIN?>patrimonio/efetuarBalanco/">Efetuar Balanço</a> </li>
@@ -33,10 +33,10 @@
 									<li><a href="<?=DOMAIN?>fluxodecaixa/exercicioCorrente/">Exercício Corrente</a> </li>
 									<li><a href="<?=DOMAIN?>fluxodecaixa/exerciciosAnteriores/">Exercícios Anterirores</a> </li>
 								</ul>
-						</li>  
-						<li class="menu-list"><a href="#"><i class="glyphicon glyphicon-search"></i> <span>Consultar</span></a>  
+						</li>
+						<li class="menu-list"><a href="#"><i class="glyphicon glyphicon-search"></i> <span>Consultar</span></a>
 							<ul class="sub-menu-list">
-								<li><a href="<?=DOMAIN?>ativo/consultar/">Ativo</a> </li>
+                <li><a href="<?=DOMAIN?>ativo/todos/">Ativo</a> </li>
 								<li><a href="<?=DOMAIN?>passivo/consultar/">Passivo</a> </li>
 								<li><a href="<?=DOMAIN?>receita/consultar/">Receita</a> </li>
 								<li><a href="<?=DOMAIN?>despesa/consultar/">Despesa</a> </li>
@@ -56,7 +56,7 @@
 								<li><a href="<?=DOMAIN?>fluxodecaixa/cadastrar/">Fluxo de caixa</a> </li>
 							</ul>
 						</li>
-						<li class="menu-list"><a href=""><i class="glyphicon glyphicon-wrench"></i><span>Editar</span></a> 
+						<li class="menu-list"><a href=""><i class="glyphicon glyphicon-wrench"></i><span>Editar</span></a>
 							<ul class="sub-menu-list">
 								<li><a href="<?=DOMAIN?>ativo/editar/">Ativo</a> </li>
 								<li><a href="<?=DOMAIN?>passivo/editar/">Passivo</a> </li>
@@ -67,7 +67,7 @@
 								<li><a href="<?=DOMAIN?>fluxodecaixa/editar/">Fluxo de caixa</a> </li>
 							</ul>
 						</li>
-						<li class="menu-list"><a href=""><i class="glyphicon glyphicon-trash"></i><span>Excluir</span></a> 
+						<li class="menu-list"><a href=""><i class="glyphicon glyphicon-trash"></i><span>Excluir</span></a>
 							<ul class="sub-menu-list">
 								<li><a href="<?=DOMAIN?>ativo/excluir/">Ativo</a> </li>
 								<li><a href="<?=DOMAIN?>passivo/excluir/">Passivo</a> </li>
@@ -82,7 +82,7 @@
 							<ul class="sub-menu-list">
 								<li><a href="<?=DOMAIN?>usuario/logout/">Sair</a></li>
 							</ul>
-						</li> 
+						</li>
 					</ul>
 				<!--sidebar nav end-->
 			</div>
